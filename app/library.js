@@ -1,17 +1,19 @@
 module.exports = {
-getPrime: function(n) {
- var x= 3,j,i=2, primeArr=[2],isPrime;          
- for (;x<=n;x+=2){ j = (int) Math.sqrt (x); isPrime = true; 
- for (i = 2; i <= j; i++) { 
- if (x % i == 0){ 
- isPrime = false;
- break; 
- }
- } 
- if(isPrime){ 
- primeArr.push(x); 
- }
- } 
- return primeArr; 
- }
+getPrimes: function(n) {
+    var sieve = [], i, j;
+	var primes = [];
+    for (i = 0; i <= n; ++i) {
+        if (!sieve[i]) {
+            // i has not been marked -- it is prime
+            primes.push(i);
+            for (j = i << 1; j <= n; j += i) {
+                sieve[j] = true;
+            }
+        }
+    }
+    return primes;
 }
+};
+
+
+ 

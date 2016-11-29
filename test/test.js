@@ -4,18 +4,17 @@
   var expect = require('expect');
   var myApp = require('../app/library.js');
 
-describe('getPrime', function() {  
-    describe('case for an integer value n as argument', function() {
+describe('getPrimes', function() {  
+    describe('case for generating prime numbers', function() {
         
-        it('should return the prime numbers in an array', function() {
-            expect(primeArr(5,3,7,11,)).to.be.equal(5,3,7,11);
-        });
-
-        it('should return prime numbers from 0 to n with asymptotic analysis', function() {
-            expect(primeArr(100)).to.be.equal(' prime less than 100);
+        
+        it('should return an array of primes between 0 and n', function() {
+            expect(app.getPrimes([100])).toBe(' prime less than 100');
         });
        
     });
-})();
+	
+});
 
- 
+	
+})();
